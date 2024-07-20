@@ -13,7 +13,6 @@ extension TilesExtension on Tiles {
         return "man4";
       case Tiles.man5:
         return "man5";
-
       case Tiles.man5Dora:
         return "man5Dora";
       case Tiles.man6:
@@ -54,6 +53,8 @@ extension TilesExtension on Tiles {
         return "sou3";
       case Tiles.sou4:
         return "sou4";
+      case Tiles.sou5:
+        return "sou5";
       case Tiles.sou5Dora:
         return "sou5Dora";
       case Tiles.sou6:

@@ -33,6 +33,7 @@ enum Tiles {
   sou2,
   sou3,
   sou4,
+  sou5,
   sou5Dora,
   sou6,
   sou7,

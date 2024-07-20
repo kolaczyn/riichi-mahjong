@@ -31,6 +31,7 @@ const List<Tiles> allTiles = [
   Tiles.sou2,
   Tiles.sou3,
   Tiles.sou4,
+  Tiles.sou5,
   Tiles.sou5Dora,
   Tiles.sou6,
   Tiles.sou7,
