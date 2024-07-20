@@ -1,0 +1,44 @@
+import 'package:mahjong/src/eums/Tiles.dart';
+
+const List<Tiles> allTiles = [
+  Tiles.chun,
+  Tiles.haku,
+  Tiles.hatsu,
+  //
+  Tiles.man1,
+  Tiles.man2,
+  Tiles.man3,
+  Tiles.man4,
+  Tiles.man5,
+  Tiles.man5Dora,
+  Tiles.man6,
+  Tiles.man7,
+  Tiles.man8,
+  Tiles.man9,
+  //
+  Tiles.pin1,
+  Tiles.pin2,
+  Tiles.pin3,
+  Tiles.pin4,
+  Tiles.pin5,
+  Tiles.pin5Dora,
+  Tiles.pin6,
+  Tiles.pin7,
+  Tiles.pin8,
+  Tiles.pin9,
+  //
+  Tiles.sou1,
+  Tiles.sou2,
+  Tiles.sou3,
+  Tiles.sou4,
+  Tiles.sou5Dora,
+  Tiles.sou6,
+  Tiles.sou7,
+  Tiles.sou8,
+  Tiles.sou9,
+  //
+  Tiles.shaa,
+  Tiles.ton,
+  Tiles.nan,
+  Tiles.pei,
+];
