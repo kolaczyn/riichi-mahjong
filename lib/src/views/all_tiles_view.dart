@@ -44,11 +44,6 @@ class _AllTilesViewState extends State<AllTilesView> {
       body: Column(
         children: [
           TilesRow(
-            tiles: [...allWindTiles, ...allDragonTiles],
-            selected: selected,
-            toggleSelected: toggleSelected,
-          ),
-          TilesRow(
             tiles: allManTiles,
             selected: selected,
             toggleSelected: toggleSelected,
@@ -60,6 +55,16 @@ class _AllTilesViewState extends State<AllTilesView> {
           ),
           TilesRow(
             tiles: allSouTiles,
+            selected: selected,
+            toggleSelected: toggleSelected,
+          ),
+          TilesRow(
+            tiles: allDragonTiles,
+            selected: selected,
+            toggleSelected: toggleSelected,
+          ),
+          TilesRow(
+            tiles: allWindTiles,
             selected: selected,
             toggleSelected: toggleSelected,
           ),

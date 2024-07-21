@@ -14,9 +14,9 @@ List<TileId> makeSet(List<Tiles> tiles) {
 }
 
 var dragonTiles = [
-  Tiles.chun,
   Tiles.haku,
   Tiles.hatsu,
+  Tiles.chun,
 ];
 
 var allDragonTiles = makeSet(dragonTiles);
@@ -24,8 +24,8 @@ var allDragonTiles = makeSet(dragonTiles);
 var windTiles = [
   Tiles.ton,
   Tiles.nan,
-  Tiles.pei,
   Tiles.shaa,
+  Tiles.pei,
 ];
 
 var allWindTiles = makeSet(windTiles);
