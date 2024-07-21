@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:mahjong/src/components/tile.dart';
+import 'package:mahjong/src/components/tiles_row.dart';
 import 'package:mahjong/src/consts/all_tiles.dart';
-import 'package:mahjong/src/eums/Tiles.dart';
 
 import '../settings/settings_view.dart';
 import 'sample_item.dart';
@@ -22,7 +21,7 @@ class SampleItemListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Samle Items'),
+        title: const Text('Riichi Mahjong tiles'),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
@@ -35,16 +34,13 @@ class SampleItemListView extends StatelessWidget {
           ),
         ],
       ),
-
-      // To work with lists that may contain a large number of items, it’s best
-      // to use the ListView.builder constructor.
-      //
-      // In contrast to the default ListView constructor, which requires
-      // building all Widgets up front, the ListView.builder constructor lazily
-      // builds Widgets as they’re scrolled into view.
-      body: ListView(
-        children: allTiles.map((x) => Tile(id: x)).toList(),
-      ),
+      body: Column(children: [
+        TilesRow(tiles: dragonTiles),
+        const TilesRow(tiles: windTiles),
+        const TilesRow(tiles: manTiles),
+        const TilesRow(tiles: pinTiles),
+        const TilesRow(tiles: souTiles),
+      ]),
     );
   }
 }

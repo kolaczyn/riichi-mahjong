@@ -1,4 +1,4 @@
-import 'package:mahjong/src/eums/Tiles.dart';
+import 'package:mahjong/src/eums/all_tiles.dart';
 
 extension TilesExtension on Tiles {
   String get name {

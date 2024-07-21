@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mahjong/src/eums/Tiles.dart';
+import 'package:mahjong/src/eums/all_tiles.dart';
 
 class Tile extends StatelessWidget {
   const Tile({super.key, required this.id});
