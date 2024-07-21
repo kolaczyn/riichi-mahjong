@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mahjong/src/components/tiles_row.dart';
 import 'package:mahjong/src/consts/all_tiles.dart';
+import 'package:mahjong/src/eums/tiles_extension.dart';
 import 'package:mahjong/src/models/tile_id.dart';
 
 /// Displays a list of SampleItems.
@@ -26,7 +27,12 @@ class _AllTilesViewState extends State<AllTilesView> {
     } else if (!isMax) {
       selected.add(tile);
     }
+    selected.sort(tileComparator);
     setState(() {});
+  }
+
+  int tileComparator(TileId a, TileId b) {
+    return a.type.sortOrder - b.type.sortOrder;
   }
 
   @override
@@ -62,6 +68,7 @@ class _AllTilesViewState extends State<AllTilesView> {
           ),
           TilesRow(
               tiles: selected,
+              // this is a hack to make the selected tiles appear without red selection
               selected: const [],
               toggleSelected: toggleSelected),
         ],
