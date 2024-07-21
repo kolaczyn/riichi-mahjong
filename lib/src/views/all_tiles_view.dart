@@ -19,9 +19,11 @@ class _AllTilesViewState extends State<AllTilesView> {
   List<TileId> selected = [];
 
   void toggleSelected(TileId tile) {
-    if (selected.contains(tile)) {
+    var isRemoving = selected.contains(tile);
+    var isMax = selected.length >= 14;
+    if (isRemoving) {
       selected.remove(tile);
-    } else {
+    } else if (!isMax) {
       selected.add(tile);
     }
     setState(() {});
@@ -33,28 +35,37 @@ class _AllTilesViewState extends State<AllTilesView> {
       appBar: AppBar(
         title: const Text('All Riichi Mahjong tiles'),
       ),
-      body: Column(children: [
-        TilesRow(
-          tiles: [...allWindTiles, ...allDragonTiles],
-          selected: selected,
-          toggleSelected: toggleSelected,
-        ),
-        TilesRow(
-          tiles: allManTiles,
-          selected: selected,
-          toggleSelected: toggleSelected,
-        ),
-        TilesRow(
-          tiles: allPinTiles,
-          selected: selected,
-          toggleSelected: toggleSelected,
-        ),
-        TilesRow(
-          tiles: allSouTiles,
-          selected: selected,
-          toggleSelected: toggleSelected,
-        ),
-      ]),
+      body: Column(
+        children: [
+          TilesRow(
+            tiles: [...allWindTiles, ...allDragonTiles],
+            selected: selected,
+            toggleSelected: toggleSelected,
+          ),
+          TilesRow(
+            tiles: allManTiles,
+            selected: selected,
+            toggleSelected: toggleSelected,
+          ),
+          TilesRow(
+            tiles: allPinTiles,
+            selected: selected,
+            toggleSelected: toggleSelected,
+          ),
+          TilesRow(
+            tiles: allSouTiles,
+            selected: selected,
+            toggleSelected: toggleSelected,
+          ),
+          Text(
+            "Your hand ${selected.length} / 14",
+          ),
+          TilesRow(
+              tiles: selected,
+              selected: const [],
+              toggleSelected: toggleSelected),
+        ],
+      ),
     );
   }
 }
