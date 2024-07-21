@@ -10,10 +10,6 @@ List<TileId> makeSet(List<Tiles> tiles) {
     }
   }
 
-  // log stuff
-
-  print(output.length);
-
   return output;
 }
 

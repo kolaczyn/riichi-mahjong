@@ -1,29 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:mahjong/src/eums/all_tiles.dart';
+import 'package:mahjong/src/models/tile_id.dart';
 
 class Tile extends StatelessWidget {
-  const Tile({super.key, required this.id});
+  const Tile({
+    super.key,
+    required this.selected,
+    required this.tileId,
+    required this.toggleSelected,
+  });
 
-  final Tiles id;
+  final TileId tileId;
+  final bool selected;
+  final void Function(TileId) toggleSelected;
 
   static double width = 60;
   static double height = 80;
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image(
-          image: const AssetImage('assets/images/tiles/front.png'),
-          width: width,
-          height: height,
-        ),
-        Image(
-          image: AssetImage('assets/images/tiles/${id.name}.png'),
-          width: width,
-          height: height,
-        ),
-      ],
+    return GestureDetector(
+      onTap: () => toggleSelected(tileId),
+      child: Stack(
+        children: [
+          Image(
+            image: AssetImage(selected
+                ? 'assets/images/tiles/Back.png'
+                : 'assets/images/tiles/Front.png'),
+            width: width,
+            height: height,
+          ),
+          Image(
+            image: AssetImage('assets/images/tiles/${tileId.type.name}.png'),
+            width: width,
+            height: height,
+          ),
+        ],
+      ),
     );
   }
 }

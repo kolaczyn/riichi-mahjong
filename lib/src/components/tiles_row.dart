@@ -3,9 +3,16 @@ import 'package:mahjong/src/components/tile.dart';
 import 'package:mahjong/src/models/tile_id.dart';
 
 class TilesRow extends StatelessWidget {
-  const TilesRow({super.key, required this.tiles});
+  const TilesRow({
+    super.key,
+    required this.tiles,
+    required this.selected,
+    required this.toggleSelected,
+  });
 
   final List<TileId> tiles;
+  final List<TileId> selected;
+  final void Function(TileId) toggleSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +22,13 @@ class TilesRow extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: tiles.length,
         itemBuilder: (context, index) {
+          var curr = tiles[index];
           return SizedBox(
             width: Tile.width,
             child: Tile(
-              id: tiles[index].type,
+              tileId: curr,
+              selected: selected.contains(curr),
+              toggleSelected: toggleSelected,
             ),
           );
         },
