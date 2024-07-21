@@ -3,8 +3,8 @@ import 'package:mahjong/src/components/tiles_row.dart';
 import 'package:mahjong/src/consts/all_tiles.dart';
 
 /// Displays a list of SampleItems.
-class AllTilesView extends StatelessWidget {
-  const AllTilesView({
+class RiichiMahjongTilesView extends StatelessWidget {
+  const RiichiMahjongTilesView({
     super.key,
   });
 
@@ -14,7 +14,7 @@ class AllTilesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('All Riichi Mahjong tiles'),
+        title: const Text('Riichi Mahjong tiles'),
       ),
       body: Column(children: [
         TilesRow(tiles: [...allWindTiles, ...allDragonTiles]),

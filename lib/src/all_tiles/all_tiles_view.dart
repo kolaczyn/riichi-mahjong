@@ -14,7 +14,7 @@ class AllTilesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('All Riichi Mahjong tiles'),
+        title: const Text('Riichi Mahjong tiles'),
       ),
       body: Column(children: [
         TilesRow(tiles: [...allWindTiles, ...allDragonTiles]),
