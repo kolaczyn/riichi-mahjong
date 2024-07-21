@@ -20,21 +20,28 @@ class Tile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => toggleSelected(tileId),
-      child: Stack(
-        children: [
-          Image(
-            image: AssetImage(selected
-                ? 'assets/images/tiles/Back.png'
-                : 'assets/images/tiles/Front.png'),
-            width: width,
-            height: height,
+      child: Container(
+        padding: const EdgeInsets.all(2),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: selected ? Colors.redAccent : Colors.transparent,
+            width: 2,
           ),
-          Image(
-            image: AssetImage('assets/images/tiles/${tileId.type.name}.png'),
-            width: width,
-            height: height,
-          ),
-        ],
+        ),
+        child: Stack(
+          children: [
+            Image(
+              image: const AssetImage('assets/images/tiles/Front.png'),
+              width: width,
+              height: height,
+            ),
+            Image(
+              image: AssetImage('assets/images/tiles/${tileId.type.name}.png'),
+              width: width,
+              height: height,
+            ),
+          ],
+        ),
       ),
     );
   }
