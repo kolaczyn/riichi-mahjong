@@ -35,8 +35,7 @@ class SampleItemListView extends StatelessWidget {
         ],
       ),
       body: Column(children: [
-        TilesRow(tiles: dragonTiles),
-        const TilesRow(tiles: windTiles),
+        TilesRow(tiles: [...windTiles, ...dragonTiles]),
         const TilesRow(tiles: manTiles),
         const TilesRow(tiles: pinTiles),
         const TilesRow(tiles: souTiles),

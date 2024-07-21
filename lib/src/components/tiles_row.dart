@@ -10,12 +10,13 @@ class TilesRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80,
+      height: Tile.height,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: tiles.length,
-        itemBuilder: (context, index) =>
-            SizedBox(width: 60, child: Tile(id: tiles[index])),
+        itemBuilder: (context, index) {
+          return SizedBox(width: Tile.width, child: Tile(id: tiles[index]));
+        },
       ),
     );
   }
