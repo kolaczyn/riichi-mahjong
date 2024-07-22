@@ -10,7 +10,7 @@ class AllTilesView extends StatefulWidget {
     super.key,
   });
 
-  static const routeName = '/';
+  static const routeName = '/all-tiles';
 
   @override
   State<AllTilesView> createState() => _AllTilesViewState();
@@ -40,7 +40,9 @@ class _AllTilesViewState extends State<AllTilesView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('All Riichi Mahjong tiles'),
+        backgroundColor: Colors.green.shade700,
       ),
+      backgroundColor: Colors.green.shade700,
       body: Column(
         children: [
           TilesRow(

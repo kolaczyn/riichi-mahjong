@@ -13,8 +13,6 @@ extension TilesExtension on Tiles {
         return "man4";
       case Tiles.man5:
         return "man5";
-      case Tiles.man5Dora:
-        return "man5Dora";
       case Tiles.man6:
         return "man6";
       case Tiles.man7:
@@ -34,8 +32,6 @@ extension TilesExtension on Tiles {
         return "pin4";
       case Tiles.pin5:
         return "pin5";
-      case Tiles.pin5Dora:
-        return "pin5Dora";
       case Tiles.pin6:
         return "pin6";
       case Tiles.pin7:
@@ -55,8 +51,6 @@ extension TilesExtension on Tiles {
         return "sou4";
       case Tiles.sou5:
         return "sou5";
-      case Tiles.sou5Dora:
-        return "sou5Dora";
       case Tiles.sou6:
         return "sou6";
       case Tiles.sou7:
@@ -105,9 +99,6 @@ extension TilesExtension on Tiles {
         return 14;
       case Tiles.man5:
         return 15;
-      case Tiles.man5Dora:
-        // TODO
-        return 15;
       case Tiles.man6:
         return 16;
       case Tiles.man7:
@@ -127,9 +118,6 @@ extension TilesExtension on Tiles {
         return 24;
       case Tiles.pin5:
         return 25;
-      case Tiles.pin5Dora:
-        // TODO
-        return 25;
       case Tiles.pin6:
         return 26;
       case Tiles.pin7:
@@ -148,9 +136,6 @@ extension TilesExtension on Tiles {
       case Tiles.sou4:
         return 34;
       case Tiles.sou5:
-        return 35;
-      case Tiles.sou5Dora:
-        // TODO
         return 35;
       case Tiles.sou6:
         return 36;

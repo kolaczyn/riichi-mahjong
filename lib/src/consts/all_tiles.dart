@@ -36,7 +36,6 @@ var manTiles = [
   Tiles.man3,
   Tiles.man4,
   Tiles.man5,
-  // Tiles.man5Dora,
   Tiles.man6,
   Tiles.man7,
   Tiles.man8,
@@ -51,7 +50,6 @@ var pinTiles = [
   Tiles.pin3,
   Tiles.pin4,
   Tiles.pin5,
-  // Tiles.pin5Dora,
   Tiles.pin6,
   Tiles.pin7,
   Tiles.pin8,
@@ -66,7 +64,6 @@ var souTiles = [
   Tiles.sou3,
   Tiles.sou4,
   Tiles.sou5,
-  // Tiles.sou5Dora,
   Tiles.sou6,
   Tiles.sou7,
   Tiles.sou8,
@@ -74,3 +71,8 @@ var souTiles = [
 ];
 
 var allSouTiles = makeSet(souTiles);
+
+var allTiles =
+    allManTiles + allPinTiles + allSouTiles + allWindTiles + allDragonTiles;
+
+var shuffledTiles = allTiles.toList()..shuffle();
