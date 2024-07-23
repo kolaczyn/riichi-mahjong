@@ -2,19 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:mahjong/src/models/tile_id.dart';
 
 class Tile extends StatelessWidget {
-  const Tile({
-    super.key,
-    required this.selected,
-    required this.tileId,
-    required this.toggleSelected,
-  });
+  const Tile(
+      {super.key,
+      required this.selected,
+      required this.tileId,
+      required this.toggleSelected,
+      this.visible = true});
 
   final TileId tileId;
   final bool selected;
+  final bool visible;
   final void Function(TileId) toggleSelected;
 
-  static double width = 60;
-  static double height = 80;
+  static double width = 30;
+  static double height = 40;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +41,12 @@ class Tile extends StatelessWidget {
               width: width,
               height: height,
             ),
+            if (!visible)
+              Image(
+                image: const AssetImage('assets/images/tiles/back.png'),
+                width: width,
+                height: height,
+              ),
           ],
         ),
       ),

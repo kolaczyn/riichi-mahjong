@@ -1,10 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:mahjong/src/components/tiles_row.dart';
+import 'package:mahjong/src/models/shuffled_tiles.dart';
 import 'package:mahjong/src/views/all_tiles_view.dart';
+
+import '../models/tile_id.dart';
 
 class GameView extends StatelessWidget {
   const GameView({super.key});
 
   static const routeName = '/game';
+
+  static final deck = ShuffledTiles();
+  List<TileId> getDeck(int index) {
+    switch (index) {
+      case 1:
+        return deck.westHand;
+      case 3:
+        return deck.northHand;
+      case 4:
+        return deck.deadWall;
+      case 5:
+        return deck.southHand;
+      case 7:
+        return deck.eastHand;
+      case 0 || 2 || 6 || 8:
+      default:
+        return [];
+    }
+  }
 
   void navigateToAllTiles(BuildContext context) {
     Navigator.pushNamed(context, AllTilesView.routeName);
@@ -22,13 +45,27 @@ class GameView extends StatelessWidget {
         return "South";
       case 7:
         return "East";
-      //
-      case 0:
-      case 2:
-      case 6:
-      case 8:
+      case 0 || 2 || 6 || 8:
       default:
         return '';
+    }
+  }
+
+  int quarterTurns(int index) {
+    switch (index) {
+      case 1:
+        return 2;
+      case 3:
+        return 1;
+      case 4:
+        return 0;
+      case 5:
+        return 3;
+      case 7:
+        return 0;
+      case 0 || 2 || 6 || 8:
+      default:
+        return 0;
     }
   }
 
@@ -53,11 +90,22 @@ class GameView extends StatelessWidget {
             itemBuilder: (context, index) {
               return Container(
                 margin: const EdgeInsets.all(2.0),
-                color: Colors.blue[100 * (index % 9 + 1)],
-                child: Center(
-                  child: Text(
-                    getLabel(index),
-                    style: const TextStyle(fontSize: 16),
+                child: RotatedBox(
+                  quarterTurns: quarterTurns(index),
+                  child: Center(
+                    child: Column(
+                      children: [
+                        Text(
+                          getLabel(index),
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                        TilesRow(
+                            tiles: getDeck(index),
+                            selected: const [],
+                            visible: index == 7,
+                            toggleSelected: (_) => {}),
+                      ],
+                    ),
                   ),
                 ),
               );

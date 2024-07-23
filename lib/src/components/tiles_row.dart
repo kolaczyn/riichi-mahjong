@@ -8,10 +8,12 @@ class TilesRow extends StatelessWidget {
     required this.tiles,
     required this.selected,
     required this.toggleSelected,
+    this.visible = true,
   });
 
   final List<TileId> tiles;
   final List<TileId> selected;
+  final bool visible;
   final void Function(TileId) toggleSelected;
 
   @override
@@ -29,6 +31,7 @@ class TilesRow extends StatelessWidget {
               tileId: curr,
               selected: selected.contains(curr),
               toggleSelected: toggleSelected,
+              visible: visible,
             ),
           );
         },
