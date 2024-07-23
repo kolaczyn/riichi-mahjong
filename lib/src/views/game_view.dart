@@ -10,6 +10,28 @@ class GameView extends StatelessWidget {
     Navigator.pushNamed(context, AllTilesView.routeName);
   }
 
+  String getLabel(int index) {
+    switch (index) {
+      case 1:
+        return "West";
+      case 3:
+        return "North";
+      case 4:
+        return "Center";
+      case 5:
+        return "South";
+      case 7:
+        return "East";
+      //
+      case 0:
+      case 2:
+      case 6:
+      case 8:
+      default:
+        return '';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +56,7 @@ class GameView extends StatelessWidget {
                 color: Colors.blue[100 * (index % 9 + 1)],
                 child: Center(
                   child: Text(
-                    'Item $index',
+                    getLabel(index),
                     style: const TextStyle(fontSize: 16),
                   ),
                 ),
